@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>图片浏览器</title>
+  </head>
+  <body>
+    <div id="app">
+     <img v-bind:src="arr[index]"  alt=""> 
+     <a href="#" v-on:click="prev" v-show="index!=0">上一张</a>
+     <a href="#" v-on:click="next" v-show="index<arr.length-1">下一张</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+     var app = new  Vue({
+       el:"#app",
+       data:{
+         arr:["image/1_pic.png","image/2_pic.png","image/3_pic.png","image/4_pic.png","image/5_pic.png",],
+         index:0
+       },
+       methods:{
+        prev:function(){
+
+         this.index--
+        },
+        next:function(){
+        this.index++
+        }
+       }
+
+     })
+
+    </script> 
+
+
+
+
+  </body>

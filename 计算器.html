@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>data 数据对象</title>
+  </head>
+  <body>
+    <div id="app">
+     
+     <button v-on:click="addCount"> 
+       +
+     </button>
+
+      <span v-text="count"></span>
+     
+      <button v-on:click="deleteCount">
+       -
+      </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+     var app = new  Vue({
+       el:"#app",
+       data:{
+         count:0,
+         message:"你好 小黑！",
+       },
+       methods:{
+         addCount:function(){
+         if (this.count < 10) {
+          this.count++
+         } else {
+           alert("别点了 +")
+         }
+           
+          
+         },
+         deleteCount:function(){
+           if (this.count >  0) {
+            this.count--
+           } else {
+            alert("别点了 - ")
+           }
+           
+         }
+       }
+
+     })
+
+    </script> 
+
+
+
+
+  </body>
